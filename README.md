@@ -1,2 +1,2 @@
 # Mamdani
-Fuzzy logic ptoject
+Fuzzy logic project
