@@ -6,11 +6,12 @@ ANKARA UNIVERSITY
 
 
 
-*****************************************************************CONSTRUCTIONS******************************************************************************
+# CONSTRUCTIONS
 
 
 The rules and their ranges were already given. Therefore, no analysis were performed to form rules. The given rules were simply incorporated into the code in tuple form.
 Below, the incorporation of pressure fuzzy sets is given.
+# PRESSURRE TRIANGULAR MEMBERSHIP FUNCTION
 p_vb = (1.75, 1.75, 2.25)
 p_b = (1.75, 2.25, 2.5)
 p_n = (2.25, 2.75, 3.25)
