@@ -2,25 +2,27 @@
 
 
 
-ANKARA UNIVERSITY
+ANKARA UNIVERSITY FUZZY LOGIC PROJECT
 
 
 
-# CONSTRUCTIONS
+## CONSTRUCTIONS
 
 
 The rules and their ranges were already given. Therefore, no analysis were performed to form rules. The given rules were simply incorporated into the code in tuple form.
 Below, the incorporation of pressure fuzzy sets is given.
-# PRESSURRE TRIANGULAR MEMBERSHIP FUNCTION
+### PRESSURRE TRIANGULAR MEMBERSHIP FUNCTION
+```
 p_vb = (1.75, 1.75, 2.25)
 p_b = (1.75, 2.25, 2.5)
 p_n = (2.25, 2.75, 3.25)
 p_g = (2.5, 3.25, 3.5)
 p_vg = (2.75, 4, 4)
-
+```
 Then, input values which are temperature and pressure are taken from the user.
 After taking the input, the membership values of these input are found. By doing this fuzzification was completed.
 Below, the function developed to find the membership of a crisp value to a triangular fuzzy set is given.
+```
 def membership(memb_func, value):
     if value < memb_func[0]:
         return 0
@@ -32,7 +34,7 @@ def membership(memb_func, value):
         return (value-memb_func[0]) / (memb_func[1]-memb_func[0])
     elif value > memb_func[1]:
         return 1 - ((value-memb_func[1]) / (memb_func[2]-memb_func[1]))
-
+```
 Then, the rule matrix was constructed. To do this minimum of membership value of the two inputs was picked as the firing degree of consequent. Then, the maximum values these minimum values for each CO2 concentration set were found. These maximum values show the firing degree of each rule. By doing this Mamdani fuzzy inference was done.
 For defuzzification, the center of area method was selected. Instead of an approximate method, the exact centroid of the area was found.In order to find the centroid, firstly the critical points were needed to be found. This was done as follows:
 1-The intersection points of adjacent sub-areas(areas bounded by the membership value,x-axis and the membership function) were found. 
@@ -45,7 +47,8 @@ With these steps all critical points of the area was obrained. Since every sub-a
  in itself, their areas, centroids and centroids multiplied by area can be calculated. The centroid of the total area is found by the operation:(∑▒〖A×(x ) ̅ 〗)/(∑▒A) The result is the concentration of CO2
 Below, the functions used for defuzzification are given:
 
-# Calculates  the mass and the moment  a portion of the final graph
+### Calculates  the mass and the moment  a portion of the final graph
+```
 def area_and_moment(start_x, start_y, finish_x, finish_y):
 
     base = finish_x - start_x
@@ -76,7 +79,7 @@ def defuzzification(points):
         nominator += temp_nom
 
     return nominator / denominator
-
+```
 
 
  
