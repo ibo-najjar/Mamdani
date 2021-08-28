@@ -1,0 +1,2 @@
+# Mamdani
+Fuzzy logic ptoject
